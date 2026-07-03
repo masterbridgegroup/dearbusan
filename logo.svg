@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ephesis&amp;display=swap');
+    .word{font-family:'Ephesis',cursive;font-size:150px;fill:#0b1020}
+    .tag{font-family:Helvetica,Arial,sans-serif;font-size:17px;letter-spacing:6px;fill:#0b1020;opacity:.65}
+  </style>
+  <rect width="900" height="360" fill="none"/>
+  <text x="450" y="210" text-anchor="middle" class="word">Dear Busan,</text>
+  <text x="450" y="285" text-anchor="middle" class="tag">PRIVATE TOURS WITH MIRA · EN · 中文</text>
+</svg>

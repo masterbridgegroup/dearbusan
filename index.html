@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dear Busan — Private Tours with Mira | Licensed Guide (English · 中文)</title>
+<meta name="description" content="Private, custom tours of Busan with Mira — a government-licensed tour guide fluent in English and Chinese. See Busan like a local friend is showing you around.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Ephesis&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b1020;          /* deep navy, near-black */
+    --paper:#f5f1ea;        /* warm off-white for text */
+    --mist:rgba(245,241,234,.62);
+    --aqua:#7fd8e8;         /* Busan sea accent */
+    --line:rgba(245,241,234,.16);
+    --serif:'Cormorant Garamond', serif;
+    --sans:'Inter', sans-serif;
+    --script:'Ephesis', cursive;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:20px 5vw;mix-blend-mode:difference}
+  .logo{font-family:var(--script);font-size:2rem;line-height:1;letter-spacing:.01em}
+  .nav-links{display:flex;gap:28px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+  .nav-links a{opacity:.85;transition:opacity .3s}
+  .nav-links a:hover{opacity:1}
+  @media(max-width:640px){.nav-links a:not(.ig){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;height:100svh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero-bg{position:absolute;inset:0}
+  .hero-bg::after{content:'';position:absolute;inset:0;
+     background:linear-gradient(180deg,rgba(11,16,32,.35) 0%,rgba(11,16,32,.15) 45%,rgba(11,16,32,.92) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:0 5vw 11vh;max-width:1200px}
+  .hero-kicker{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--aqua);margin-bottom:18px}
+  h1{font-family:var(--script);font-weight:400;font-size:clamp(4.2rem,13vw,9.5rem);line-height:1.05;letter-spacing:.01em}
+  .hero-sub{margin-top:22px;max-width:520px;font-size:.98rem;color:var(--mist)}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 30px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+       border:1px solid var(--paper);transition:all .35s}
+  .btn:hover{background:var(--paper);color:var(--ink)}
+  .btn.solid{background:var(--paper);color:var(--ink)}
+  .btn.solid:hover{background:transparent;color:var(--paper)}
+
+  /* ---------- ticker ---------- */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0}
+  .ticker-track{display:inline-block;animation:slide 28s linear infinite;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- section shells ---------- */
+  section{padding:110px 5vw}
+  .shell{max-width:1200px;margin:0 auto}
+  .sec-kicker{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--aqua);margin-bottom:16px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.15;margin-bottom:18px}
+  .lede{max-width:560px;color:var(--mist);font-size:.98rem}
+
+  /* ---------- letter ---------- */
+  .letter{max-width:680px;margin:0 auto;text-align:center}
+  .letter p.body-letter{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.6;color:var(--paper)}
+  .letter .sig{margin-top:30px;font-family:var(--script);font-size:2.2rem;color:var(--aqua)}
+  .letter .sig-note{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+
+  /* ---------- feed grid ---------- */
+  .feed{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:56px}
+  .cell{position:relative;overflow:hidden;border-radius:2px}
+  .cell img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+  .cell:hover img{transform:scale(1.05)}
+  .cell .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+     background:linear-gradient(0deg,rgba(11,16,32,.75),transparent);opacity:0;transition:opacity .5s}
+  .cell:hover .cap{opacity:1}
+  .c1{grid-column:1/6;aspect-ratio:4/5}
+  .c2{grid-column:6/10;aspect-ratio:3/4;margin-top:70px}
+  .c3{grid-column:10/13;aspect-ratio:3/4}
+  .c4{grid-column:1/4;aspect-ratio:3/4;margin-top:-40px}
+  .c5{grid-column:4/9;aspect-ratio:16/10;margin-top:40px}
+  .c6{grid-column:9/13;aspect-ratio:4/5}
+  .feed-quote{grid-column:1/13;text-align:center;padding:46px 0 20px}
+  .feed-quote p{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--mist)}
+  @media(max-width:760px){
+    .c1,.c2,.c3,.c4,.c5,.c6{grid-column:1/13;margin-top:0;aspect-ratio:4/5}
+  }
+
+  /* ---------- tours ---------- */
+  .tour-card{position:relative;display:block;overflow:hidden;border-radius:2px;margin-bottom:22px;min-height:400px}
+  .tour-card img{position:absolute;inset:0;transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+  .tour-card:hover img{transform:scale(1.04)}
+  .tour-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,16,32,.82) 0%,rgba(11,16,32,.25) 60%,rgba(11,16,32,.05) 100%)}
+  .tour-info{position:relative;z-index:2;padding:46px;max-width:560px;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px}
+  .tour-no{font-size:.68rem;letter-spacing:.3em;color:var(--aqua);text-transform:uppercase;margin-bottom:12px}
+  .tour-info h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;margin-bottom:12px}
+  .tour-meta{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-bottom:14px}
+  .tour-desc{font-size:.92rem;color:var(--mist);margin-bottom:22px;max-width:440px}
+  .tour-link{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid var(--aqua);padding-bottom:5px;color:var(--paper);width:fit-content;transition:color .3s}
+  .tour-card:hover .tour-link{color:var(--aqua)}
+  @media(max-width:640px){.tour-info{padding:28px}}
+
+  /* ---------- why ---------- */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
+  .why-item .no{font-family:var(--serif);font-style:italic;font-size:2.4rem;color:var(--aqua)}
+  .why-item h4{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin:14px 0 10px}
+  .why-item p{font-size:.9rem;color:var(--mist)}
+  @media(max-width:760px){.why{grid-template-columns:1fr}}
+
+  /* ---------- about ---------- */
+  .about{display:grid;grid-template-columns:5fr 6fr;gap:60px;align-items:center}
+  .about-img{aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+  .about p{color:var(--mist);font-size:.95rem;margin-bottom:16px}
+  .about .zh{font-family:var(--serif);font-style:italic;color:var(--paper)}
+  @media(max-width:820px){.about{grid-template-columns:1fr}}
+
+  /* ---------- contact ---------- */
+  .contact{text-align:center;border-top:1px solid var(--line)}
+  .contact h2{margin-bottom:10px}
+  .contact .lede{margin:0 auto 36px}
+  .contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:36px 5vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+     font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.4)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#top">Dear Busan,</a>
+  <div class="nav-links">
+    <a href="#tours">Tours</a>
+    <a href="#about">About Mira</a>
+    <a href="#contact">Contact</a>
+    <a class="ig" href="https://www.instagram.com/dearbusan" target="_blank" rel="noopener">Instagram ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1704072939275-163c8d456685?q=80&w=1900&auto=format&fit=crop" alt="Gwangan Bridge lit up at night, Busan">
+  </div>
+  <div class="hero-inner">
+    <p class="hero-kicker">Private tours · Licensed guide · English &amp; 中文</p>
+    <h1>Dear Busan,</h1>
+    <p class="hero-sub">A love letter to Korea's city of sea and light — written for you, one private tour at a time, by Mira. No flags, no crowds, no scripts. Just Busan, the way a local friend would show you.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="#tours">Explore Tours</a>
+      <a class="btn" href="https://www.instagram.com/dearbusan" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    Government-licensed guide&nbsp;&nbsp;·&nbsp;&nbsp;English &amp; Mandarin&nbsp;&nbsp;·&nbsp;&nbsp;Private &amp; custom itineraries&nbsp;&nbsp;·&nbsp;&nbsp;Busan, South Korea&nbsp;&nbsp;·&nbsp;&nbsp;
+    Government-licensed guide&nbsp;&nbsp;·&nbsp;&nbsp;English &amp; Mandarin&nbsp;&nbsp;·&nbsp;&nbsp;Private &amp; custom itineraries&nbsp;&nbsp;·&nbsp;&nbsp;Busan, South Korea&nbsp;&nbsp;·&nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- LETTER -->
+<section>
+  <div class="letter reveal">
+    <p class="sec-kicker">A letter, before you arrive</p>
+    <p class="body-letter">"Dear traveler — you only have a day or two in Busan, and I don't want you to spend them lost in translation. Give me your interests, and I'll write your itinerary like a letter meant only for you."</p>
+    <p class="sig">— Mira</p>
+    <p class="sig-note">Licensed Tour Guide · Born &amp; based in Busan</p>
+  </div>
+</section>
+
+<!-- FEED -->
+<section style="padding-top:20px">
+  <div class="shell">
+    <div class="feed">
+      <div class="cell c1 reveal"><img src="https://images.unsplash.com/photo-1672671187899-a10f547341f1?q=80&w=1400&auto=format&fit=crop" alt="Gamcheon Culture Village"><div class="cap">Gamcheon Culture Village</div></div>
+      <div class="cell c2 reveal"><img src="https://images.unsplash.com/photo-1591520284162-8e64eceebacf?q=80&w=1200&auto=format&fit=crop" alt="Huinnyeoul Culture Village by the sea"><div class="cap">Huinnyeoul, above the sea</div></div>
+      <div class="cell c3 reveal"><img src="https://images.unsplash.com/photo-1616340705328-c48c03dc722e?q=80&w=1000&auto=format&fit=crop" alt="Busan Tower"><div class="cap">Busan Tower, Yongdusan</div></div>
+      <div class="feed-quote reveal"><p>"The sea is the first thing Busan says to you. Let it talk."</p></div>
+      <div class="cell c4 reveal"><img src="https://images.unsplash.com/photo-1624176193860-dd7866e5a8aa?q=80&w=1000&auto=format&fit=crop" alt="Korean street food"><div class="cap">Street food, eaten standing up</div></div>
+      <div class="cell c5 reveal"><img src="https://images.unsplash.com/photo-1638591751482-1a7d27fcea15?q=80&w=1600&auto=format&fit=crop" alt="Haeundae Beach and skyline"><div class="cap">Haeundae Beach</div></div>
+      <div class="cell c6 reveal"><img src="https://images.unsplash.com/photo-1717179161513-b828131f5f93?q=80&w=1200&auto=format&fit=crop" alt="Haeundae Blueline Park capsule train"><div class="cap">Blueline coastal train</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOURS -->
+<section id="tours">
+  <div class="shell">
+    <p class="sec-kicker reveal">The Tours</p>
+    <h2 class="reveal">Three letters,<br>three ways to read Busan.</h2>
+    <p class="lede reveal" style="margin-bottom:52px">Every tour is private — just you, your people, and Mira. Prices are per group, so couples, families and small crews are all welcome.</p>
+
+    <a class="tour-card reveal" href="tour-highlights.html">
+      <img src="https://images.unsplash.com/photo-1546385040-d48180ede560?q=80&w=1600&auto=format&fit=crop" alt="Gamcheon Culture Village colorful houses">
+      <div class="tour-info">
+        <p class="tour-no">No. 01 — The First Hello</p>
+        <h3>Busan Highlights, Half Day</h3>
+        <p class="tour-meta">4 hours · from ₩120,000 / group</p>
+        <p class="tour-desc">Gamcheon's painted hillside, the shouting fish auctioneers of Jagalchi, old-town alleys and a skyline view — the essential Busan, without a single wasted minute.</p>
+        <span class="tour-link">Read the itinerary →</span>
+      </div>
+    </a>
+
+    <a class="tour-card reveal" href="tour-fullday.html">
+      <img src="https://images.unsplash.com/photo-1638591751482-1a7d27fcea15?q=80&w=1600&auto=format&fit=crop" alt="Haeundae Beach full day tour">
+      <div class="tour-info">
+        <p class="tour-no">No. 02 — The Deep Read</p>
+        <h3>Full Day, Written For You</h3>
+        <p class="tour-meta">8 hours · from ₩250,000 / group</p>
+        <p class="tour-desc">A custom full-day itinerary built around what you love — food, photography, temples or history. Sea-cliff temples, coastal trains, and dinner where locals actually eat.</p>
+        <span class="tour-link">Read the itinerary →</span>
+      </div>
+    </a>
+
+    <a class="tour-card reveal" href="tour-evening.html">
+      <img src="https://images.unsplash.com/photo-1625899139925-57f71ba783b4?q=80&w=1600&auto=format&fit=crop" alt="Busan city lights at night">
+      <div class="tour-info">
+        <p class="tour-no">No. 03 — The Night Postscript</p>
+        <h3>Evening Taste &amp; Lights</h3>
+        <p class="tour-meta">3 hours · from ₩90,000 / group</p>
+        <p class="tour-desc">Night-market skewers and hotteok, neon alleys, then the Gwangan Bridge burning across the water. Busan is a night city — this is its best chapter.</p>
+        <span class="tour-link">Read the itinerary →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section style="padding-top:40px">
+  <div class="shell">
+    <p class="sec-kicker reveal">Why travel with Mira</p>
+    <div class="why">
+      <div class="why-item reveal">
+        <p class="no">01</p>
+        <h4>Licensed &amp; Legal</h4>
+        <p>Mira is a government-certified tour guide — Korea's official qualification for paid guiding. You're in professional, insured, fully legal hands.</p>
+      </div>
+      <div class="why-item reveal">
+        <p class="no">02</p>
+        <h4>Two Languages, One Guide</h4>
+        <p>Fluent English and Mandarin. Mixed-language group? One guide covers everyone — no translation relay, nothing lost.</p>
+      </div>
+      <div class="why-item reveal">
+        <p class="no">03</p>
+        <h4>Yours, Not a Script</h4>
+        <p>No fixed routes. Tell Mira what you love and your day is designed around it — pace, food, photo stops and all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="shell about">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1672671221427-7c12c1a8d051?q=80&w=1200&auto=format&fit=crop" alt="On the beach at Gwangalli, Busan">
+    </div>
+    <div class="reveal">
+      <p class="sec-kicker">About Mira</p>
+      <h2>Your local friend<br>in Busan.</h2>
+      <p>Mira is a Busan local and a nationally licensed tour guide for both English and Chinese — a combination very few guides in the city hold. She has spent years walking travelers through Busan's markets, hillside villages and coastlines.</p>
+      <p>What she loves most isn't the famous view — it's the moment a traveler tastes something unfamiliar, hears the story behind an alley, and says: <em>"I would never have found this on my own."</em></p>
+      <p class="zh">欢迎中文旅客 — Mira 持有国家认证中文导游资格，可全程中文服务。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="shell reveal">
+    <p class="sec-kicker">Write back</p>
+    <h2>Ready when you are.</h2>
+    <p class="lede">Tell Mira your dates, group size and what you love — food, photos, history, or all three. You'll get a reply within 24 hours.</p>
+    <div class="contact-actions">
+      <a class="btn solid" href="mailto:masterbridgegroup@gmail.com?subject=Busan%20Tour%20Inquiry%20%E2%80%94%20Dear%20Busan">Email Mira</a>
+      <a class="btn" href="https://www.instagram.com/dearbusan" target="_blank" rel="noopener">DM on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Dear Busan · Mira</span>
+  <span>Licensed Tour Guide (EN·中文) · Busan, South Korea</span>
+  <a href="https://www.instagram.com/dearbusan" target="_blank" rel="noopener">@dearbusan</a>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
